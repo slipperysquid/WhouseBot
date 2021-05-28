@@ -4,6 +4,7 @@ import os
 #Client init
 client = discord.Client()
 
+
 #events
 
 @client.event
@@ -18,6 +19,5 @@ async def on_message(message):
     if (message.content.lower() == "ping"):
         await message.channel.send("Pong!")
 
-        
 #run client on server
 client.run(os.getenv('TOKEN'))
