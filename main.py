@@ -28,6 +28,10 @@ async def on_message(message):
 
     if ("ping" in readable_message):
         await message.channel.send("Pong!")
+        
+    if ("pong" in readable_message):
+        await message.channel.send("Ping!")
+
 
 #run client on server
 client.run(os.getenv('TOKEN'))
