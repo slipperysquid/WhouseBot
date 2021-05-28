@@ -26,10 +26,10 @@ async def on_message(message):
     if any(x in readable_message for x in botconstants.reply_monch):
         await message.channel.send("<:ColeMonch:819365182114496514>")
 
-    if ("ping" in readable_message):
+    if (" ping" in readable_message):
         await message.channel.send("Pong!")
         
-    if ("pong" in readable_message):
+    if (" pong" in readable_message):
         await message.channel.send("Ping!")
 
 
