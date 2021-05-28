@@ -24,6 +24,7 @@ async def on_message(message):
         await message.channel.send("Did somebody mention the greatest person on Earth?")
         
     if any(x in readable_message for x in botconstants.reply_monch):
+        await message.channel.send("<:ColeMonch:819365182114496514>")
 
     if ("ping" in readable_message):
         await message.channel.send("Pong!")
