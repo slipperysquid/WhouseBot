@@ -17,7 +17,7 @@ async def on_ready():
 @client.event
 async def on_message(message):
 
-    words = make_readable_list(message.content.lower())
+    words = helper.make_readable_list(message.content.lower())
 
     if message.author == client.user:
         return
