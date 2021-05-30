@@ -8,4 +8,4 @@ def make_readable_list(message):
         else:
             words += word
             word = ""
-  return words
+    return words
