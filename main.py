@@ -2,6 +2,7 @@ import discord
 import os
 
 import botconstants
+import helper
 
 #Client init
 client = discord.Client()
@@ -16,20 +17,20 @@ async def on_ready():
 @client.event
 async def on_message(message):
 
-    readable_message = message.content.lower()
+    words = make_readable_list(message.content.lower())
 
     if message.author == client.user:
         return
-    if ("cole" in readable_message):
+    if ("cole" in words):
         await message.channel.send("Did somebody mention the greatest person on Earth?")
         
-    if any(x in readable_message for x in botconstants.reply_monch):
+    if any(x in words for x in botconstants.reply_monch):
         await message.channel.send("<:ColeMonch:819365182114496514>")
 
-    if ("ping" in readable_message):
+    if ("ping" in words):
         await message.channel.send("Pong!")
         
-    if ("pong" in readable_message):
+    if ("pong" in words):
         await message.channel.send("Ping!")
 
 
