@@ -18,7 +18,7 @@ async def on_ready():
 async def on_message(message):
 
     words = helper.make_readable_list(message.content.lower())
-
+    print(words)
     if message.author == client.user:
         return
     if ("cole" in words):
