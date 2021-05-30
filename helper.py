@@ -5,7 +5,7 @@ def make_readable_list(message):
     for i in range(0, len(message)):
         if ((ord(message[i]) >= 97 and ord(message[i]) <= 122)):
             word += message[i]
-            if(i == len(message)):
+            if(i == len(message) - 1):
                 words.append(word)
         else:
             words.append(word)
