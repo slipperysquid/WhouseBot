@@ -5,8 +5,6 @@ from discord.ext import commands
 import botconstants
 import helper
 
-#Client init
-client = discord.Client()
 
 #Bot command init
 bot = commands.Bot(command_prefix = '~')
@@ -51,4 +49,4 @@ async def on_message(message):
 
 
 #run client on server
-client.run(os.getenv('TOKEN'))
+bot.run(os.getenv('TOKEN'))
