@@ -23,7 +23,7 @@ async def say(ctx, msg):
 
 @bot.command()
 async def help(ctx):
-    await ctx.send(botconstants.help_msg)
+    await ctx.send("```{}```".format(botconstants.help_msg))
 #events
 
 @client.event
