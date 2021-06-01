@@ -10,7 +10,7 @@ client = discord.Client()
 
 #Bot command init
 bot = commands.Bot(command_prefix = '~')
-
+bot.remove_command('help')
 #commands
 
 
