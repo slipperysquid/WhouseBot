@@ -7,7 +7,7 @@ import helper
 
 
 #Bot command init
-bot = commands.Bot(command_prefix = '~')
+bot = commands.Bot(command_prefix = '%')
 bot.remove_command('help')
 #commands
 
