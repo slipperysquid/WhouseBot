@@ -24,11 +24,11 @@ async def help(ctx):
     await ctx.send("```{}```".format(botconstants.help_msg))
 #events
 
-@client.event
+@bot.event
 async def on_ready():
     print("I am ready master.")
 
-@client.event
+@bot.event
 async def on_message(message):
 
     words = helper.make_readable_list(message.content.lower())
