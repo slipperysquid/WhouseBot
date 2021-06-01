@@ -1,5 +1,6 @@
 import discord
 import os
+from discord.ext import commands
 
 import botconstants
 import helper
@@ -7,7 +8,22 @@ import helper
 #Client init
 client = discord.Client()
 
+#Bot command init
+bot = commands.Bot(command_prefix = '~')
 
+#commands
+
+
+
+#will say what the user tells the bont to say
+@bot.command()
+async def say(ctx, msg):
+    await ctx.send(msg)
+
+
+@bot.command()
+async def help(ctx):
+    await ctx.send(botconstants.help_msg)
 #events
 
 @client.event
