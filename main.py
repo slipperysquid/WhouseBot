@@ -10,14 +10,9 @@ import helper
 intents = discord.Intents.default()
 bot = commands.Bot(command_prefix = '~', intents = intents)
 bot.remove_command('help')
-#commands
 
-
-
-#will say what the user tells the bot to say
-@bot.command(name = 'say')
-async def say(ctx, msg):
-    await ctx.send(msg)
+#cog init
+helper.load_cog(bot, 'say')
 
 
 @bot.command(name = 'help')
@@ -46,7 +41,7 @@ async def on_message(message):
         
     if ("pong" in words):
         await message.channel.send("Ping!")
-        
+
     if ("thomas" in words):
         await message.channel.send("SOOOOOOOOOOOOOOOOOOOOOS!!!!")
 
