@@ -22,7 +22,6 @@ async def say(ctx, msg):
 
 @bot.command(name = 'help')
 async def help(ctx):
-    print('helping')
     await ctx.send("```{}```".format(botconstants.help_msg))
 #events
 
@@ -32,7 +31,7 @@ async def on_ready():
 
 @bot.event
 async def on_message(message):
-
+    val = await bot.process_commands(message)
     words = helper.make_readable_list(message.content.lower())
     if message.author == bot.user:
         return
