@@ -15,12 +15,12 @@ bot.remove_command('help')
 
 
 #will say what the user tells the bot to say
-@bot.command()
+@bot.command(name = 'say')
 async def say(ctx, msg):
     await ctx.send(msg)
 
 
-@bot.command()
+@bot.command(name = 'help')
 async def help(ctx):
     await ctx.send("```{}```".format(botconstants.help_msg))
 #events
