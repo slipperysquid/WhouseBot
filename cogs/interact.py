@@ -16,6 +16,7 @@ class Interact(commands.Cog):
         words = helper.make_readable_list(message.content.lower())
         if message.author == self.bot.user:
             return
+
         if ("cole" in words):
             await message.channel.send("Did somebody mention the greatest person on Earth?")
         
@@ -34,7 +35,6 @@ class Interact(commands.Cog):
     @commands.Cog.listener()
     async def on_ready(self):
         print("I am ready master.")
-
 
 def setup(bot):
     bot.add_cog(Interact(bot))
