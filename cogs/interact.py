@@ -32,7 +32,7 @@ class Interact(commands.Cog):
             await message.channel.send("SOOOOOOOOOOOOOOOOOOOOOS!!!!")
 
     @commands.Cog.listener()
-    async def on_ready():
+    async def on_ready(self):
         print("I am ready master.")
 
 
