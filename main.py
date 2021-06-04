@@ -46,6 +46,8 @@ async def on_message(message):
         
     if ("pong" in words):
         await message.channel.send("Ping!")
+    if ("thomas" in words):
+        await message.channel.send("SOOOOOOOOOOOOOOOOOOOOOS!!!!")
 
 
 #run client on server
