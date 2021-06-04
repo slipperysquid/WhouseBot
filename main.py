@@ -5,37 +5,35 @@ from discord.ext import commands
 import botconstants
 import helper
 
-#Client init
-client = discord.Client()
 
-#Bot command init
-bot = commands.Bot(command_prefix = '~')
+#Bot init
+intents = discord.Intents.default()
+bot = commands.Bot(command_prefix = '~', intents = intents)
 bot.remove_command('help')
 #commands
 
 
 
-#will say what the user tells the bont to say
-@bot.command()
+#will say what the user tells the bot to say
+@bot.command(name = 'say')
 async def say(ctx, msg):
     await ctx.send(msg)
 
 
-@bot.command()
+@bot.command(name = 'help')
 async def help(ctx):
     await ctx.send("```{}```".format(botconstants.help_msg))
 #events
 
-@client.event
+@bot.event
 async def on_ready():
     print("I am ready master.")
 
-@client.event
+@bot.event
 async def on_message(message):
-
+    val = await bot.process_commands(message)
     words = helper.make_readable_list(message.content.lower())
-    print(words)
-    if message.author == client.user:
+    if message.author == bot.user:
         return
     if ("cole" in words):
         await message.channel.send("Did somebody mention the greatest person on Earth?")
@@ -51,4 +49,4 @@ async def on_message(message):
 
 
 #run client on server
-client.run(os.getenv('TOKEN'))
+bot.run(os.getenv('TOKEN'))
