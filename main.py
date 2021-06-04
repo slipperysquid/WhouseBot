@@ -6,14 +6,15 @@ import botconstants
 import helper
 
 
-#Bot command init
-bot = commands.Bot(command_prefix = '%')
+#Bot init
+intents = discord.Intents.default()
+bot = commands.Bot(command_prefix = '%', intents = intents)
 bot.remove_command('help')
 #commands
 
 
 
-#will say what the user tells the bont to say
+#will say what the user tells the bot to say
 @bot.command()
 async def say(ctx, msg):
     await ctx.send(msg)
