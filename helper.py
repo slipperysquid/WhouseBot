@@ -4,10 +4,10 @@ from discord.ext import commands
 
 #extention loader and Unloader
 def load_cog(bot, cog):
-    bot.load_extention('cogs.{}'.format(cog))
+    bot.load_extension('cogs.{}'.format(cog))
 
 def unload_cog(bot, cog):
-    bot.unload_extention('cogs.{}'.format(cog))
+    bot.unload_extension('cogs.{}'.format(cog))
     
 #returns a list of words in message
 def make_readable_list(message):
