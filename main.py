@@ -8,7 +8,7 @@ import helper
 
 #Bot init
 intents = discord.Intents.default()
-bot = commands.Bot(command_prefix = '%', intents = intents)
+bot = commands.Bot(command_prefix = '~', intents = intents)
 bot.remove_command('help')
 #commands
 
