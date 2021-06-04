@@ -1,3 +1,4 @@
+import os
 import discord
 from discord.ext import commands
 
@@ -8,6 +9,13 @@ def load_cog(bot, cog):
 
 def unload_cog(bot, cog):
     bot.unload_extension('cogs.{}'.format(cog))
+
+#loads all cogs
+def load_cogs(bot):
+    for cogs in os.listdir("./cogs"):
+        cog = cogs.replace('.py', '')
+    bot.load_cog(bot, cog)
+        
     
 #returns a list of words in message
 def make_readable_list(message):

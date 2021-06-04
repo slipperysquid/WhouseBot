@@ -31,6 +31,10 @@ class Interact(commands.Cog):
         if ("thomas" in words):
             await message.channel.send("SOOOOOOOOOOOOOOOOOOOOOS!!!!")
 
+    @commands.Cog.listener()
+    async def on_ready():
+        print("I am ready master.")
+
 
 def setup(bot):
     bot.add_cog(Interact(bot))

@@ -12,17 +12,7 @@ bot = commands.Bot(command_prefix = '~', intents = intents)
 bot.remove_command('help')
 
 #cog init
-helper.load_cog(bot, 'say')
-helper.load_cog(bot, 'interact')
-helper.load_cog(bot, 'help')
+helper.load_cogs(bot)
 
-
-
-#events
-@bot.event
-async def on_ready():
-    print("I am ready master.")
-
-
-#run client on server
+#run bot
 bot.run(os.getenv('TOKEN'))
