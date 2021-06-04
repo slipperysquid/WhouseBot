@@ -14,7 +14,7 @@ def unload_cog(bot, cog):
 def load_cogs(bot):
     for cogs in os.listdir("./cogs"):
         cog = cogs.replace('.py', '')
-    bot.load_cog(bot, cog)
+    load_cog(bot, cog)
         
     
 #returns a list of words in message
