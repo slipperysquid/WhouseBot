@@ -12,7 +12,7 @@ class Interact(commands.Cog):
 
     @commands.Cog.listener()
     async def on_message(self, message):
-        val = await self.bot.process_commands(message)
+        #val = await self.bot.process_commands(message)
         words = helper.make_readable_list(message.content.lower())
         if message.author == self.bot.user:
             return
