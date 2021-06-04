@@ -1,4 +1,3 @@
-import discord
 import os
 from discord.ext import commands
 
@@ -13,37 +12,15 @@ bot.remove_command('help')
 
 #cog init
 helper.load_cog(bot, 'say')
+helper.load_cog(bot, 'interact')
+helper.load_cog(bot, 'help')
 
 
-@bot.command(name = 'help')
-async def help(ctx):
-    await ctx.send("```{}```".format(botconstants.help_msg))
+
 #events
-
 @bot.event
 async def on_ready():
     print("I am ready master.")
-
-@bot.event
-async def on_message(message):
-    val = await bot.process_commands(message)
-    words = helper.make_readable_list(message.content.lower())
-    if message.author == bot.user:
-        return
-    if ("cole" in words):
-        await message.channel.send("Did somebody mention the greatest person on Earth?")
-        
-    if any(x in words for x in botconstants.reply_monch):
-        await message.channel.send("<:ColeMonch:819365182114496514>")
-
-    if ("ping" in words):
-        await message.channel.send("Pong!")
-        
-    if ("pong" in words):
-        await message.channel.send("Ping!")
-
-    if ("thomas" in words):
-        await message.channel.send("SOOOOOOOOOOOOOOOOOOOOOS!!!!")
 
 
 #run client on server
