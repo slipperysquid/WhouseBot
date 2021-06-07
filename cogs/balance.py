@@ -10,7 +10,7 @@ class Balance(commands.Cog):
         self.bot = bot
 
     @commands.command()
-    async def balance(ctx):
+    async def balance(self, ctx):
         #returns false if user has account already
         open_account(ctx.author)
         #loading json
