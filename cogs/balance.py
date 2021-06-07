@@ -1,4 +1,5 @@
 import discord
+from discord import embeds
 from discord.ext import commands
 
 import json
@@ -30,6 +31,8 @@ class Balance(commands.Cog):
         em.add_field(name = "Wallet Balance:", value = usr_wall, inline = True)
         em.add_field(name = "Bank Balance:", value = usr_bank, inline = True)
 
+        await ctx.send(embed = em)
+
 
 
 #helper functions----------------------------------------------------------------------------
@@ -39,11 +42,12 @@ def open_account(user):
     if(user.id in users):
         return False
     else:
-        users[str(user.id)]["wallet"] = "50"
-        users[str(user.id)]["bank"] = "500"
+        users[str(user.id)] = {}
+        users[str(user.id)]["wallet"] = 0
+        users[str(user.id)]["bank"] = 0
 
-    with open("bank.json", w) as f:
-        json.dump(users, f)
+    save_to_json(users)
+    
     return True
 
 
@@ -52,6 +56,10 @@ def get_bank_data():
     with open("bank.json", "r") as f:
         users = json.load(f)
     return users
+
+def save_to_json(users):
+    with open("bank.json", "w") as f:
+        json.dump(users, f)
 
 #setup-------------------------------------------------------------------------------------------
 def setup(bot):
