@@ -43,8 +43,8 @@ def open_account(user):
         return False
     else:
         users[str(user.id)] = {}
-        users[str(user.id)]["wallet"] = 0
-        users[str(user.id)]["bank"] = 0
+        users[str(user.id)]["wallet"] = 50
+        users[str(user.id)]["bank"] = 150
 
     save_to_json(users)
     
