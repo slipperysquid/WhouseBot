@@ -39,8 +39,8 @@ def open_account(user):
     if(user.id in users):
         return False
     else:
-        users[str(user.id)]["wallet"] = 50
-        users[str(user.id)]["bank"] = 500
+        users[str(user.id)]["wallet"] = "50"
+        users[str(user.id)]["bank"] = "500"
 
     with open("bank.json", w) as f:
         json.dump(users, f)
