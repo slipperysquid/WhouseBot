@@ -10,6 +10,8 @@ class Help(commands.Cog):
     
     @commands.command()
     async def help(self, ctx):
+        em = discord.Embed(title = "List of commands")
+        
         await ctx.send("```{}```".format(botconstants.help_msg))
 
 
