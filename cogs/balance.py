@@ -29,7 +29,7 @@ class Balance(commands.Cog):
         em.set_thumbnail(url = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Mcol_money_bag.svg/1200px-Mcol_money_bag.svg.png")
         
         em.add_field(name = "Wallet Balance:", value = usr_wall, inline = True)
-        em.add_field(name = "Bank Balance:", value = usr_bank, inline = True)
+        em.add_field(name = "Balance:", value = usr_bank, inline = True)
 
         await ctx.send(embed = em)
 
