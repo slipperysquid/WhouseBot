@@ -4,7 +4,7 @@ from discord.ext import commands
 import json
 
 
-class Balance(commands.command):
+class Balance(commands.Cog):
 
     def __init__(self, bot):
         self.bot = bot
