@@ -10,9 +10,8 @@ class Help(commands.Cog):
     
     @commands.command()
     async def help(self, ctx):
-        em = discord.Embed(title = "List of commands")
-        
-        await ctx.send("```{}```".format(botconstants.help_msg))
+        em = discord.Embed(title = "List of commands", description = botconstants.help_msg, color = discord.Color.red())
+        await ctx.send(embed = em)
 
 
 #setup
